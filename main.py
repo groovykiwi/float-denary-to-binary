@@ -40,6 +40,9 @@ def main(num):
   except:
     # Round to binary form
     decimal = Decimal(str(denary)) % 1
+    print(decimal)
+    decimal = decimal * -1
+    print(decimal)
     binary_decimal = ""
     for i in range(8):
       decimal = decimal * 2
@@ -54,6 +57,7 @@ def main(num):
         firstOne = i
         break
     rounded = True
+    
       
     # Convert binary mantissa to denary
     binary_mantissa = final_binary_decimal[firstOne-1:firstOne+8]
@@ -66,7 +70,13 @@ def main(num):
           mantissa = mantissa +  1/(2**i)
     
     rounded_denary = mantissa * 2**exponent
+    
+    if denary < 0: 
+      rounded_denary = rounded_denary * -1
+    
     denary = rounded_denary
+
+    
     main(denary)
     
   # Check if the mantissa is positive or negative
