@@ -40,9 +40,7 @@ def main(num):
   except:
     # Round to binary form
     decimal = Decimal(str(denary)) % 1
-    print(decimal)
     decimal = decimal * -1
-    print(decimal)
     binary_decimal = ""
     for i in range(8):
       decimal = decimal * 2
